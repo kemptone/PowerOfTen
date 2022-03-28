@@ -4,12 +4,10 @@ const SPECIAL = "mi bi tri quadri quinti sexti septi octi noni".split(" ")
 const DIG_00x = "un duo tre quattuor quin sex septen octo novem".split(" ")
 const DIG_0x0 = "dec vigin trigin quadragin quinquagin sexagin septuagin octogin nonagin".split(" ")
 const DIG_x00 = "cen duocen trecen quadringen quingen sescen septingen octingen nongen".split(" ")
-const DIG_x000 = "millia".split(" ")
 const NORMAL = [
   DIG_0x0
   , DIG_00x
   , DIG_x00
-  , DIG_x000
 ]
 
 export function buildCardinals(Cardinals) {
@@ -17,7 +15,7 @@ export function buildCardinals(Cardinals) {
   let x = 0
   let y = 0 // by 3
   let powerNumber = 0
-  let limit = 1e4
+  let limit = 1e4 * 10
 
   while (x < limit) {
 
@@ -39,9 +37,22 @@ export function buildCardinals(Cardinals) {
         stringArray.push( "tillion" )
 
       builder.forEach( (item, index) => {
+        if (index === 4) {
+          let r = NORMAL[ 0 ]
+          stringArray.push( r[ item - 1 || 0 ] )
+        }
+        if (index === 3) {
+          let r = NORMAL[ 1 ]
+
+          stringArray.push( "millia" )
+
+          if ((item - 1) !== 0)
+            stringArray.push( r[ item - 1 || 0 ])
+
+        }
         let r = NORMAL[ index ]
         if (r && r[ item - 1 ])
-          stringArray.push( r[ item - 1 ] )
+          stringArray.push( r[ item - 1 || 0 ] )
       })
     }
 
@@ -74,7 +85,6 @@ export function buildCardinals(Cardinals) {
 
   }
 
-  console.log({ Cardinals })
 
 }
 

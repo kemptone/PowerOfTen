@@ -1,57 +1,23 @@
 import { buildCardinals } from './buildCardinals.js'
 import { firstFive } from './firstFive.js'
-
 const Cardinals = [ null, null, null, null, null, null ]
-
 buildCardinals( Cardinals )
 
-function outputPower (powerOfTen) {
-
-  const trey = []
-
-  if (powerOfTen < 6) {
-    return firstFive(powerOfTen)
-  } else if (powerOfTen < 10) {
-  } else {
-    let [ [ first, ...rest ], root ] = Cardinals[ powerOfTen ]
-    trey.push( firstFive( first ) )
-  }
-
+const P = window.PAGE = {
+  e_name : document.getElementById("name")
+  , e_pronounce : document.getElementById("pronounce")
+  , e_input : document.getElementById("input")
 }
 
-// # For the case of ending in 1x we need to end in an 'i'
-//     # instead of the usual 'ti'.  This is because we say:
-//     #
-//     #	trecen-dec-illion
-//     #
-//     # instead of:
-//     #
-//     #	trecen-dec-tillion
-//     #
-//     if (defined($d2) && $d2 == 1) {
-// 	print "i";
-//     } else {
-// 	print "ti";
-//     }
+P.e_input.addEventListener("keyup", e => {
+  const key = Number(P.e_input.value)
 
-//     # all done
-//     #
-//     return;
+  if (key < 6)
+    return P.e_name.value = firstFive( key )
 
-// outputPower(5)
-// One Hundred Thousand
+  const value = Cardinals[ key ]
 
-// outputPower(7)
-// Ten Million
+  P.e_name.value = value.stringArray.join("")
+  P.e_pronounce.value = value.stringArray.join(" ")
 
-// outputPower(9)
-// 1 Billion
-
-// outputPower(15)
-// 1 Quadrillion
-
-// outputPower(16)
-// Ten Quadrillion
-
-// outputPower(16)
-// Ten Quadrillion
+})
