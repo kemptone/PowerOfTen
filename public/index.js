@@ -12,8 +12,11 @@ const P = window.PAGE = {
 const onChange = e => {
   const key = Number(P.e_input.value)
 
-  if (key < 6)
-    return P.e_name.value = firstFive( key )
+  if (key < 6) {
+    P.e_name.value = firstFive( key )
+    P.e_pronounce.value = firstFive( key )
+    return
+  }
 
   if (key > 1e4 * 10) {
     let msg = "😜 NUMBER TOO BIG! 😜"
