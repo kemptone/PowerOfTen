@@ -9,7 +9,7 @@ const P = window.PAGE = {
   , e_input : document.getElementById("input")
 }
 
-P.e_input.addEventListener("keyup", e => {
+const onChange = e => {
   const key = Number(P.e_input.value)
 
   if (key < 6)
@@ -20,4 +20,7 @@ P.e_input.addEventListener("keyup", e => {
   P.e_name.value = value.stringArray.join("")
   P.e_pronounce.value = value.stringArray.join(" ")
 
-})
+}
+
+P.e_input.addEventListener("keyup", onChange)
+P.e_input.addEventListener("change", onChange)
