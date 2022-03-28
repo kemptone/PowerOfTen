@@ -15,6 +15,13 @@ const onChange = e => {
   if (key < 6)
     return P.e_name.value = firstFive( key )
 
+  if (key > 1e4 * 10) {
+    let msg = "😜 NUMBER TOO BIG! 😜"
+    P.e_name.value = msg
+    P.e_pronounce.value = msg
+    return alert(msg)
+  }
+
   const value = Cardinals[ key ]
 
   P.e_name.value = value.stringArray.join("")

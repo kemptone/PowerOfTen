@@ -38,6 +38,7 @@ fieldset {
 
 fieldset legend {
   text-align: center;
+  padding: 0 10px;
 }
 
 fieldset textarea,
