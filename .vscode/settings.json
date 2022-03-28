@@ -1,0 +1,43 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "files.associations": {
+        "*.view" : "javascript"
+        , "*.page" : "javascript"
+        , "*.modal" : "javascript"
+        , "*.overlay" : "javascript"
+        , "*.layout" : "javascript"
+        , "*.datatable" : "javascript"
+        , "*.jsx" : "javascript"
+        , "*.actions" : "javascript"
+        , "*.reducers" : "javascript"
+        , "*.helpers" : "javascript"
+        , "*.selectors" : "javascript"
+        , "*.field" : "javascript"
+        , "*.validate" : "javascript"
+        , "*.router" : "javascript"
+        , "*.rs" : "rust"
+        , "*.json" : "json"
+    },
+
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+      },
+    "eslint.validate": ["javascript"],
+
+    "editor.tabSize": 2,
+    "editor.useTabStops": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.minimap.enabled": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "path-intellisense.extensionOnImport": true,
+    "eslint.options": {
+        "react/prop-types": 0
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "git.ignoreLimitWarning": true,
+    "eslint.alwaysShowStatus": true,
+    "eslint.format.enable": true,
+    "eslint.lintTask.enable": true
+}
