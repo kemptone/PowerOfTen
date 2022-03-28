@@ -40,6 +40,7 @@ fieldset legend {
   text-align: center;
 }
 
+fieldset textarea,
 fieldset input {
   text-align: center;
   padding: 10px;
@@ -53,4 +54,5 @@ fieldset #pronounce {
   font-weight: bold;
   border:none;
   padding:15px 10px;
+  font-size: 16px;
 }
