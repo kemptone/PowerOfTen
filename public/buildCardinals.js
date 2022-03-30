@@ -15,7 +15,7 @@ export function buildCardinals(Cardinals) {
   let x = 0
   let y = 0 // by 3
   let powerNumber = 0
-  let limit = 1e4 * 10
+  let limit = 1e5
 
   while (x < limit) {
 

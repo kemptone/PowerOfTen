@@ -28,7 +28,7 @@ const onChange = e => {
   const value = Cardinals[ key ]
 
   P.e_name.value = value.stringArray.join("")
-  P.e_pronounce.value = value.stringArray.join(" ")
+  P.e_pronounce.value = value.stringArray.join(" ").replace(/  /g, " ")
 
 }
 

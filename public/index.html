@@ -3,27 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <title>🙋 BIG NUMBERS</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
-        <header>
-            <h1>🙋 BIG NUMBERS</h1>
-        </header>
         <fieldset>
-            <legend>Number of zeros</legend>
+            <legend>
+              🙋 Power of Ten
+
+            </legend>
             <input 
               type="number" 
               name=""
               placeholder="0"
               id="input"
               autocomplete="off"
+              min="0"
+              max="1e5"
             >
         </fieldset>
         <fieldset>
-            <legend>Name of number</legend>
+            <legend>English name</legend>
             <textarea 
               name="name" 
               id="name" 
